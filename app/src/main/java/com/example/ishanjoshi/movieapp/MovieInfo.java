@@ -17,6 +17,7 @@ public class MovieInfo extends AppCompatActivity {
 
     ImageView blurredPoster;
     TextView movieNameTextView;
+    TextView movieDescriptionTextView;
     TextView movieReleaseYearTextView;
 
     @Override
@@ -50,9 +51,11 @@ public class MovieInfo extends AppCompatActivity {
 
         movieNameTextView = findViewById(R.id.TextViewMovieName1);
         movieReleaseYearTextView = findViewById(R.id.TextViewMovieReleaseYear1);
+        movieDescriptionTextView = findViewById(R.id.TextViewMovieDescription);
 
         movieNameTextView.setText(currentMovie.getMovieName());
         movieReleaseYearTextView.setText(currentMovie.getMovieReleaseYear());
+        movieDescriptionTextView.setText(currentMovie.getMovieDescription());
 
     }
 

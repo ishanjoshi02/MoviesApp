@@ -1,9 +1,6 @@
 package com.example.ishanjoshi.movieapp;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
-import java.net.URL;
 
 /**
  * Created by Ishan Joshi on 14-Jan-18.
@@ -14,11 +11,15 @@ public class Movie implements Serializable {
     String movieName;
     String moviePoster;
     String movieReleaseYear;
+    String movieDescription;
 
-    public Movie(String movieName, String moviePoster, String movieReleaseYear) {
+    public Movie(String movieName, String moviePoster, String movieReleaseYear, String movieDescription) {
+
         this.movieName = movieName;
         this.moviePoster = moviePoster;
         this.movieReleaseYear = movieReleaseYear;
+        this.movieDescription = movieDescription;
+
     }
 
     public String getMovieName() {
@@ -31,5 +32,9 @@ public class Movie implements Serializable {
 
     public String getMovieReleaseYear() {
         return movieReleaseYear;
+    }
+
+    public String getMovieDescription() {
+        return movieDescription;
     }
 }

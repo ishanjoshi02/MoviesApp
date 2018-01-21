@@ -47,6 +47,18 @@
                 android:textColor="@android:color/white"
                 tools:text="2003" />
 
+            <TextView
+                android:id="@+id/TextViewMovieDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/white"
+                tools:text="A successful banker's (Tommy Wiseau) fiancee (Juliette Danielle) tempts and manipulates his best friend (Greg Sestero)." />
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

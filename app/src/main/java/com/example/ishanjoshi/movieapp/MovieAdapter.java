@@ -83,12 +83,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         ImageView moviePosterImageView;
         TextView movieNameTextView;
         TextView movieReleaseYearTextView;
+        TextView movieDescriptionTextView;
 
         public MovieViewHolder(View itemView) {
             super(itemView);
             this.moviePosterImageView = itemView.findViewById(R.id.ImageViewMoviePoster);
             this.movieNameTextView = itemView.findViewById(R.id.TextViewMovieName);
             this.movieReleaseYearTextView = itemView.findViewById(R.id.TextViewMovieReleaseYear);
+            this.movieDescriptionTextView = itemView.findViewById(R.id.TextViewMovieDescription);
         }
     }
 
