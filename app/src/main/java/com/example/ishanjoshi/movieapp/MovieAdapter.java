@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import jp.wasabeef.picasso.transformations.BlurTransformation;
@@ -51,6 +53,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
 
         }
+        movieViewHolder.movieRatingTextView.setText(currentMovie.getMovieRating());
         movieViewHolder.movieNameTextView.setText(currentMovie.getMovieName());
         movieViewHolder.movieReleaseYearTextView.setText(currentMovie.getMovieReleaseYear());
         movieViewHolder.itemView.setOnClickListener(
@@ -84,13 +87,17 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         TextView movieNameTextView;
         TextView movieReleaseYearTextView;
         TextView movieDescriptionTextView;
+        TextView movieRatingTextView;
 
         public MovieViewHolder(View itemView) {
+
             super(itemView);
             this.moviePosterImageView = itemView.findViewById(R.id.ImageViewMoviePoster);
             this.movieNameTextView = itemView.findViewById(R.id.TextViewMovieName);
             this.movieReleaseYearTextView = itemView.findViewById(R.id.TextViewMovieReleaseYear);
             this.movieDescriptionTextView = itemView.findViewById(R.id.TextViewMovieDescription);
+            this.movieRatingTextView = itemView.findViewById(R.id.TextViewMovieRating);
+
         }
     }
 

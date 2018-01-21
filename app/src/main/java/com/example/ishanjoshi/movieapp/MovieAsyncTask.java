@@ -13,7 +13,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,12 +63,15 @@ public class MovieAsyncTask extends AsyncTask<Void, Void, List<Movie>> {
                                 new Movie(
                                         temp.getString("title"),
                                         "http://image.tmdb.org/t/p/w500/" + temp.getString( "poster_path"),
-                                        temp.getString("release_date"),
-                                        temp.getString("overview")
+                                        formatDateString(temp.getString("release_date")),
+                                        temp.getString("overview"),
+                                        temp.getString("vote_average") + " / 10"
                                 )
                         );
 
                     }
+
+                    return myMovies;
 
                 }
 
@@ -81,7 +87,7 @@ public class MovieAsyncTask extends AsyncTask<Void, Void, List<Movie>> {
             e.printStackTrace();
         }
 
-        return myMovies;
+        return null;
     }
 
     private String getStringFromStream(InputStream mInputStream) throws IOException {
@@ -132,6 +138,23 @@ public class MovieAsyncTask extends AsyncTask<Void, Void, List<Movie>> {
         connection.connect();
 
         return connection;
+    }
+
+    String formatDateString(String dateString) {
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat resultDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        try {
+
+            Date mDate = simpleDateFormat.parse(dateString);
+            return resultDateFormat.format(mDate);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
     }
 
 }

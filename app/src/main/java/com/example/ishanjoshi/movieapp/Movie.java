@@ -12,14 +12,20 @@ public class Movie implements Serializable {
     String moviePoster;
     String movieReleaseYear;
     String movieDescription;
+    String movieRating;
 
-    public Movie(String movieName, String moviePoster, String movieReleaseYear, String movieDescription) {
+    public Movie(String movieName, String moviePoster, String movieReleaseYear, String movieDescription, String movieRating) {
 
         this.movieName = movieName;
         this.moviePoster = moviePoster;
         this.movieReleaseYear = movieReleaseYear;
         this.movieDescription = movieDescription;
+        this.movieRating = movieRating;
 
+    }
+
+    public String getMovieRating() {
+        return movieRating;
     }
 
     public String getMovieName() {

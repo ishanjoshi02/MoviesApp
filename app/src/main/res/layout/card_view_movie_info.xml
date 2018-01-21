@@ -46,6 +46,16 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 tools:text="2003" />
 
+            <TextView
+                android:id="@+id/TextViewMovieRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="3.6/10" />
+
         </LinearLayout>
 
     </LinearLayout>
